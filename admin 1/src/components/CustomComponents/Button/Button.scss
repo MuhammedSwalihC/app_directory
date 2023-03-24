@@ -1,0 +1,55 @@
+@use "../../main" as colours;
+
+.btn-success button {
+  width: 100%;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  height: 40px;
+  background: linear-gradient(
+    0deg,
+    colours.$theme-colour-1,
+    colours.$theme-colour-2
+  );
+
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.btn-cancel button {
+  width: 100%;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 10px;
+  height: 40px;
+  background: #ffff;
+  border: 1px solid grey;
+  color: rgb(22, 16, 100);
+  cursor: pointer;
+}
+
+.btn-close button {
+  width: 100%;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  background: #ffff;
+  border: 1px solid grey;
+  color: rgb(22, 16, 100);
+  cursor: pointer;
+}
+
+.btn-close button:hover {
+  background: linear-gradient(90deg, #67c7ff, white);
+}
+
+.btn-cancel button:hover {
+  background: linear-gradient(90deg, #67c7ff, white);
+}
+
+.btn-success button:hover {
+  background: linear-gradient(45deg, rgb(14 76 116) 5%, rgb(88 170 255) 100%);
+}

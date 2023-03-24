@@ -1,0 +1,167 @@
+@use "../main" as colours;
+
+.header-layout {
+  width: 100%;
+  height: 100px;
+  background: #fff;
+  display: flex;
+}
+
+.logo-box {
+  min-width: 270px;
+  width: 10%;
+  display: flex;
+  background: linear-gradient(
+    170deg,
+    colours.$theme-colour-1,
+    colours.$theme-colour-2
+  );
+  justify-content: flex-start;
+  align-items: center;
+  transition: ease-in-out 0.5s;
+}
+
+.header-left {
+  display: flex;
+  flex: 4;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.header-left .bar-button {
+  padding: 0.1rem 1rem 0.1rem 1rem;
+  border-right: 1px solid grey;
+  cursor: pointer;
+}
+
+.header-left .form-title {
+  padding: 0.1rem 1rem 0.1rem 1rem;
+  font-size: 25px;
+  font-weight: 600;
+  color: #495584;
+}
+
+.header-left span i {
+  font-size: 22px;
+}
+
+.header-right {
+  flex: 2;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.search-area {
+  display: flex;
+  align-items: center;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  height: 50%;
+  border: 1px solid #edf2f5;
+  border-radius: 25px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  font-size: 18px;
+  width: 200px;
+}
+
+.search-box i {
+  margin-right: 1rem;
+}
+
+.settings-group {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.settings-group .profile img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.settings-group .right-groups {
+  padding: 0 20px 0 20px;
+}
+
+.profile-actions {
+  position: absolute;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  border-radius: 8px;
+  width: 200px;
+  top: 100px;
+  right: 40px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  box-shadow: 0px 1px 15px 1px rgb(230 234 236 / 35%);
+}
+
+.profile-actions span {
+  height: 30px;
+  padding-left: 20px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.profile-actions span:hover {
+  background: linear-gradient(
+    0deg,
+    colours.$theme-colour-1,
+    colours.$theme-colour-2
+  );
+  color: rgb(214, 209, 209);
+  cursor: pointer;
+  border-radius: 5px;
+}
+.settings {
+  position: relative;
+}
+
+.settings-dropdown {
+  background-color: white;
+  border-radius: 3px;
+  padding: 8px;
+  position: absolute;
+  font-size: 12px;
+  box-shadow: 2px 2px 5px lightblue;
+  bottom: -40px;
+  right: 18px;
+  opacity: 0;
+  transition: opacity .2s .2s, min-width .2s .5s;
+  min-width: 125px;
+}
+.settings:hover .settings-dropdown {
+  opacity: 1;
+  transition-delay: 0s;
+}
+.settings-dropdown ul {
+  list-style: none;
+}
+.settings li{
+  padding: 4px 8px;
+}
+.settings-dropdown li:hover {
+  background-color: #d9dbe4db;
+  opacity: 90%;
+  cursor: pointer;
+}
+
+.settings-dropdown.active {
+  opacity: 1
+}
+

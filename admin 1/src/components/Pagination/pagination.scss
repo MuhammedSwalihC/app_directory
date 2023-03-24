@@ -1,0 +1,16 @@
+.page-active {
+  margin-right: 20px;
+  border-radius: 50%;
+  background: #0d6efd;
+  color: #ffff;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-number {
+  margin-right: 20px;
+  cursor: pointer;
+}

@@ -86,7 +86,6 @@ def rename_contact_columns(df):
             "Profile picture": "profile_picture",
             "Email Address": "email_address",
             "Phone Number": "phone_number",
-            "Room Number": "number_room",
             "Subjects taught": "subjects_taught",
         },
         inplace=True,

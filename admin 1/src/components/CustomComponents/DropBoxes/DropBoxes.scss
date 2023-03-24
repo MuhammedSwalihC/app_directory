@@ -1,0 +1,67 @@
+@use "../../main" as colours;
+
+.select-label {
+  min-width: 180px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.select-wrapper {
+  width: 100%;
+  min-width: 200px;
+  display: flex;
+  min-width: 200px;
+  border-radius: 5px;
+  font-size: 18px;
+  padding-right: 40px;
+  min-height: 40px;
+  border: 1px solid rgb(189, 185, 185);
+  outline: none;
+  position: relative;
+}
+
+.css-qc6sy-singleValue {
+  font-family: "Public Sans", sans-serif !important;
+  font-size: 16px !important;
+  color: #5b5954b6 !important;
+}
+.css-b62m3t-container {
+  width: 100% !important;
+  border: none !important;
+  height: 35px;
+}
+
+.css-1s2u09g-control {
+  border: none !important;
+}
+
+.disabled .css-b62m3t-container {
+  pointer-events: none;
+  cursor: none;
+}
+
+.disabled .css-1hb7zxy-IndicatorsContainer {
+  display: none !important;
+}
+.css-1pahdxg-control {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.disabled .css-14el2xx-placeholder {
+  display: none !important;
+}
+.disabled:hover .tool-box .fa-pen {
+  display: inline;
+}
+
+.css-2613qy-menu {
+  z-index: 5 !important;
+  background: #fff !important;
+}
+
+.css-319lph-ValueContainer {
+  padding-left: 0px !important;
+}

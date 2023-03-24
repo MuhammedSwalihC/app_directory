@@ -1,0 +1,95 @@
+@use "../../main" as colours;
+
+.side-bar {
+  min-width: 270px;
+  width: 10%;
+  min-height: calc(100% - 1px);
+  background: linear-gradient(
+    0deg,
+    colours.$theme-colour-1,
+    colours.$theme-colour-2
+  );
+  display: flex;
+  flex-direction: column;
+  transition: ease-in-out 0.5s;
+}
+
+.side-bar ul {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  color: #fff;
+  justify-content: space-evenly;
+}
+
+.side-bar ul ul {
+  margin-top: 0rem;
+}
+
+.side-bar ul li {
+  margin-top: 5px;
+  width: 85%;
+  padding: 1rem 0 2rem 1rem;
+}
+
+.side-bar ul span {
+  display: flex;
+  position: relative;
+}
+
+.side-bar ul span span {
+  display: flex;
+  width: 170px;
+  font-size: 16px;
+  position: absolute;
+  left: 40px;
+}
+
+.side-bar ul li:hover {
+  background: linear-gradient(
+    268deg,
+    rgb(40, 143, 209) 5%,
+    rgb(9, 52, 151) 100%
+  );
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+}
+
+.menu-text {
+  display: flex;
+  font-size: 16px;
+  justify-content: center;
+  position: absolute;
+  left: 5px;
+}
+
+.close {
+  min-width: 80px;
+  width: 4%;
+  transition: ease-in-out 0.5s;
+}
+
+.icon-only {
+  left: 5px;
+  display: flex;
+  font-size: 16px;
+  justify-content: center;
+  font-size: 16px;
+  position: absolute;
+}
+
+.sub-menu {
+  position: absolute;
+  left: 20px;
+}
+
+.side-bar .active {
+  background: linear-gradient(
+    268deg,
+    rgb(40, 143, 209) 5%,
+    rgb(9, 52, 151) 100%
+  );
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+}

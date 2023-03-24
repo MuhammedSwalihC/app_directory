@@ -48,7 +48,7 @@ class UserLoginView(APIView):
             user_serialized = UserRegisterSerializer(user).data
             payload = JWT_PAYLOAD_HANDLER(user)
             token = JWT_ENCODE_HANDLER(payload)
-            user_serialized.update({'token': token,
+            user_serialized.update({'authToken': token,
                                     'status': True,
                                     "role": "SA"})
             return Response(user_serialized, status=status.HTTP_200_OK)
@@ -56,7 +56,7 @@ class UserLoginView(APIView):
             user_serialized = UserRegisterSerializer(user).data
             payload = JWT_PAYLOAD_HANDLER(user)
             token = JWT_ENCODE_HANDLER(payload)
-            user_serialized.update({'token': token,
+            user_serialized.update({'authToken': token,
                                     'status': True,
                                     "role": "AD"})
             return Response(user_serialized, status=status.HTTP_200_OK)
@@ -64,7 +64,7 @@ class UserLoginView(APIView):
             user_serialized = UserRegisterSerializer(user).data
             payload = JWT_PAYLOAD_HANDLER(user)
             token = JWT_ENCODE_HANDLER(payload)
-            user_serialized.update({'token': token,
+            user_serialized.update({'authToken': token,
                                     'status': True,
                                     "role": "TE"})
             return Response(user_serialized, status=status.HTTP_200_OK)
@@ -72,7 +72,7 @@ class UserLoginView(APIView):
             user_serialized = UserRegisterSerializer(user).data
             payload = JWT_PAYLOAD_HANDLER(user)
             token = JWT_ENCODE_HANDLER(payload)
-            user_serialized.update({'token': token,
+            user_serialized.update({'authToken': token,
                                     'status': True,
                                     "role": "ST"})
             return Response(user_serialized, status=status.HTTP_200_OK)

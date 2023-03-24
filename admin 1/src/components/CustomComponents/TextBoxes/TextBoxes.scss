@@ -1,0 +1,44 @@
+.form-text {
+  width: 99%;
+  min-width: 400px;
+  display: flex;
+  padding: 15px;
+  position: relative;
+}
+
+.text-wrapper {
+  width: 100%;
+  min-width: 200px;
+  display: flex;
+  min-width: 200px;
+  border-radius: 5px;
+  font-size: 18px;
+  padding-right: 40px;
+  min-height: 40px;
+  border: 1px solid rgb(189, 185, 185);
+  outline: none;
+  position: relative;
+}
+
+.text-label {
+  min-width: 180px;
+  max-height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.text-input {
+  width: 100%;
+  border: none;
+  padding-right: 30px;
+  font-size: 16px;
+  outline: none;
+  height: 35px;
+  background: transparent;
+  color: #5b5954b6;
+  padding-left: 10px;
+}
+
+.disabled:hover .tool-box .fa-pen {
+  display: inline;
+}

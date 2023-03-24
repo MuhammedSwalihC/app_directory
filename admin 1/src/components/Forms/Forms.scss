@@ -1,0 +1,253 @@
+@use "../main" as colours;
+
+.horizontal-right {
+  justify-content: flex-end;
+}
+
+.horizontal-left {
+  justify-content: flex-start;
+}
+
+.vertical-right {
+  align-items: flex-end;
+}
+
+.vertical-left {
+  align-items: flex-start;
+}
+
+.verticle-center {
+  align-items: center;
+}
+
+.horizontal-center {
+  justify-content: center;
+}
+
+.fixed-height {
+  height: calc(100% - 0px);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow: auto;
+}
+
+.hidden-overflow {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow: auto;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.work-area {
+  display: flex;
+  position: relative;
+}
+.work-area::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
+
+.form-container {
+  background: #fff;
+  position: relative;
+  display: flex;
+}
+
+.border {
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background: linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(0deg, colours.$theme-colour-1, colours.$theme-colour-2);
+}
+
+.height-full {
+  min-height: 100%;
+}
+
+.height-medium {
+  min-height: 75%;
+}
+
+.height-half {
+  min-height: 75%;
+}
+
+.width-full {
+  width: 100%;
+}
+
+.width-medium {
+  width: 75%;
+}
+
+.width-half {
+  width: 50%;
+}
+
+.width-small {
+  width: 25%;
+}
+
+.width-x-small {
+  min-width: 13%;
+}
+
+@media only screen and (max-width: 1540px) {
+  .form {
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+  }
+
+  .form .form-text {
+    width: 70%;
+  }
+}
+
+.activity-frame {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.activity-frame li {
+  padding: 5px 0 10px 20px;
+  min-height: 90px;
+  border-left: 3px solid transparent;
+  position: relative;
+  background: linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(0deg, colours.$theme-colour-1, colours.$theme-colour-2);
+}
+
+.activity-frame li span:nth-child(1) {
+  display: inline-block;
+  padding-bottom: 5px;
+  background: -webkit-linear-gradient(
+    colours.$theme-colour-1,
+    colours.$theme-colour-2
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.activity-frame li::before {
+  content: "";
+  height: 30px;
+  width: 30px;
+  background: url("../../assets/images/edit-icon.svg");
+  background-size: cover;
+  position: absolute;
+  left: -17px;
+  top: -5px;
+}
+
+.activity-frame li span:nth-child(2) {
+  color: rgba(82, 74, 74, 0.87);
+}
+
+.small-avatar {
+  width: 40px;
+  height: 40px;
+  background: url(../../assets/images/user-avatar.svg);
+}
+
+.large-avatar {
+  width: 100px;
+  height: 100px;
+  background: url(../../assets/images/user-avatar.svg);
+}
+
+.round {
+  border-radius: 50%;
+}
+
+.search-result {
+  min-width: 600px;
+  background: #fff;
+  border-radius: 0px 0px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: space-around;
+  justify-content: center;
+  position: relative;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.member-label {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+}
+
+.add-user {
+  display: flex;
+  font-weight: bold;
+  justify-content: center;
+  min-width: 75px;
+  align-items: center;
+  height: 25px;
+  border-radius: 30px;
+  color: #fff;
+  background: rgb(10, 13, 153);
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.email-label {
+  width: 500px;
+}
+
+.image-container {
+  width: 100%;
+  height: 100%;
+  background-image: url(../../assets/images/image3.png);
+  background-repeat: no-repeat;
+}
+
+.email-list {
+  width: 94%;
+  position: absolute;
+  background: #fff;
+  top: 58px;
+  padding: 15px;
+  border-top: none;
+  border: 1px solid grey;
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
+}
+
+.column-tabs {
+  display: flex;
+  padding: 10px 0px;
+}
+
+.column-tabs span {
+  flex: 9;
+}
+
+.column-tabs button {
+  flex: 1;
+  background: linear-gradient(45deg, rgb(14 76 116) 5%, rgb(88 170 255) 100%);
+  border: none;
+  border-radius: 20px;
+  height: 25px;
+  color: #ffff;
+  font-weight: bolder;
+}
+
+
+.position-relative{
+  position: relative;
+}
+.position-absolute{
+  position: absolute;
+}

@@ -1,0 +1,43 @@
+@keyframes cssAnimation {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.respone-notify {
+  position: absolute;
+  min-width: 200px;
+  min-height: 50px;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  right: 10px;
+  top: 10px;
+  z-index: 1;
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 20px;
+  -webkit-animation: cssAnimation 5s forwards;
+  animation: cssAnimation 5s forwards;
+}
+
+.respone-notify .close-frame {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 30px;
+  position: absolute;
+  top: 8px;
+}
+
+.respone-notify .close-frame span {
+  cursor: pointer;
+}

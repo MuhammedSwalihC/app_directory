@@ -1,0 +1,56 @@
+.container{
+    padding: 10px;
+    width: 100%;
+    .department-selection{
+        width: 250px;
+        select{
+            padding: 4px 10px;
+        }
+    }
+}
+// .form-settings-outer{
+//     padding: 10px;
+//     background-color: white;
+//     width: 100%;
+//     height: 100%;
+// }
+// .form-item{
+//     display: flex;
+// }
+// .form-item >div{
+//     display: flex;
+//     flex-direction: column;
+//     margin-right: 20px;
+// }
+// .form-item{
+//     label{
+//         font-weight: bold;
+//         margin-bottom: 5px;
+//         font-size: 16px;
+//     }
+// }
+.save-btn{
+    padding: 4px 10px;
+    margin-right: 5px;
+}
+.form-item {
+    select,
+    input {
+        padding: 4px 10px;
+    }
+
+    td {
+        position: relative
+    }
+
+    span {
+        position: absolute;
+        bottom: -1px;
+        left: 0px;
+        font-size: 11px;
+        color:rgb(193, 59, 59)
+    }
+    label{
+        font-weight: 500;
+    }
+}
