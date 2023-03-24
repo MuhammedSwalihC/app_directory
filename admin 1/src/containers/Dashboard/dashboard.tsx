@@ -109,7 +109,7 @@ export const Dashboard: React.FC<Props> = ({ children }) => {
           className={"form-container width-x-small"}
           styles={{ width: "25%" }}
         >
-          {/* <span
+          <span
             style={{
               width: "75%",
               minWidth: "150px",
@@ -120,8 +120,8 @@ export const Dashboard: React.FC<Props> = ({ children }) => {
               flexDirection: "column",
             }}
           >
-            <h1>10</h1>
-            <p>Live Users</p>
+            <h1>1</h1>
+            <p>Users</p>
           </span>
           <span
             style={{
@@ -131,7 +131,7 @@ export const Dashboard: React.FC<Props> = ({ children }) => {
               display: "flex",
               alignItems: "center",
             }}
-          ></span> */}
+          ></span>
         </Container>
       </Container>
 

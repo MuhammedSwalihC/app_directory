@@ -11,9 +11,8 @@ export interface loginInterface {
 
 export interface userInterface {
   email: string;
-  module_id?: number;
-  domain_name?: string;
-  department_id?: number;
+  role: string;
+  username?: string;
 }
 export interface DepartmentInterface {
   first_name: string;

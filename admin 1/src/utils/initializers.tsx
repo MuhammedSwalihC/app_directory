@@ -17,8 +17,8 @@ export const loginValue: loginInterface = {
 
 export const userinitialValue: userInterface = {
   email: "",
-  module_id: NaN,
-  domain_name: "",
+  role: "",
+  username: "",
 };
 export const departmentinitialValue: DepartmentInterface = {
   first_name: "",

@@ -8,6 +8,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework_jwt.settings import api_settings
 from directory_app.serializers.user_serializer import UserLoginSerializer, UserRegisterSerializer
+from directory_app.models.user_model import UserModel
+
 
 # Obtain user model instance
 User = get_user_model()
@@ -29,7 +31,8 @@ class UserCreateView(CreateAPIView):
     """
     View for creating new User.
     """
-    permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAuthenticated]
+    permission_classes = []
     serializer_class = UserRegisterSerializer
 
 
@@ -80,3 +83,9 @@ class UserLoginView(APIView):
             {'message': 'Please enter valid credentials'},
             status=status.HTTP_400_BAD_REQUEST
             )
+    
+    
+    def get(self, request):
+        users = UserModel.objects.all()
+        serializer = UserRegisterSerializer(users, many=True)
+        return Response(serializer.data)

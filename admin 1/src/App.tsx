@@ -4,6 +4,8 @@ import "./loader.scss";
 import Home from "./components/Home";
 import DepartmentList from "./containers/DepartmentList/DepartmentList";
 import FormSettings from "./containers/FormSettings/FormSettings";
+import { UserList } from "./containers/AuthUsersList/UsersList";
+
 
 function App() {
   return (
@@ -11,6 +13,7 @@ function App() {
       <Router>
         <Home>
           <Routes>
+          <Route path="users" element={<UserList />} />
             <Route path="department" element={<DepartmentList />} />
             <Route path="form" element={<FormSettings />} />
           </Routes>

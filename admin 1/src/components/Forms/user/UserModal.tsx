@@ -64,23 +64,14 @@ const UserModal: FC<IProps> = ({
               Placeholder={"Email"}
               handleInputChange={handleChange}
             />
-            <SelectBox
-              name="module_id"
-              placeHolder={"Select Module"}
-              data={moduleOptions && moduleOptions}
-              value={data.module_id || ""}
-              handleInputChange={handleChange}
-            />
-            <SelectBox
-              name="department_id"
-              placeHolder={"Select Department"}
-              data={departmentOptions && departmentOptions}
-              value={data.department_id || ""}
+            <TextInput
+              name="username"
+              Placeholder={"User Name"}
               handleInputChange={handleChange}
             />
             <TextInput
-              name="domain_name"
-              Placeholder={"Domain Name"}
+              name="role"
+              Placeholder={"Role Name"}
               handleInputChange={handleChange}
             />
             <Container

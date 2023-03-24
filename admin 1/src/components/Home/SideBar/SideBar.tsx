@@ -23,14 +23,14 @@ export const SideBar: React.FC<Props> = ({ close }) => {
             {!close && <span>Dashboard</span>}
           </span>
         </li>
-        {/* <li className={isActive("/users")} onClick={() => navigate("/users")}>
+        <li className={isActive("/users")} onClick={() => navigate("/users")}>
           <span>
             <i
               className={`fa fa-users ${close ? "icon-only" : "menu-text"}`}
             ></i>
             {!close && <span>Users</span>}
           </span>
-        </li> */}
+        </li>
         <li
           className={isActive("/department")}
           onClick={() => navigate("/department")}

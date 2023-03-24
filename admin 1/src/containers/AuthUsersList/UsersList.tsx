@@ -1,5 +1,4 @@
-import { Console } from "console";
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useEffect, useMemo, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
 import { ColumnManager } from "../../components/columnManager/columnManager";
@@ -7,32 +6,35 @@ import { SelectBox, TextInput } from "../../components/CustomComponents";
 import { Button } from "../../components/CustomComponents/Button/Buttons";
 import { Modal } from "../../components/CustomComponents/ModalBox/Modal";
 import { TableContainer } from "../../components/CustomComponents/Table/TableContainer";
-import DepartmentModal from "../../components/Forms/department/DepartmentModal";
 import { Container, WorkArea } from "../../components/Forms/FormContainers";
+import UserModal from "../../components/Forms/user/UserModal";
 import { Pagination } from "../../components/Pagination/pagination";
 import { useAppSelector } from "../../redux/hooks";
 import { Apps } from "../../redux/reducers/apps.thunks";
-import { departmentinitialValue } from "../../utils/initializers";
+import { userinitialValue } from "../../utils/initializers";
 
 interface Props {
   children?: any;
 }
 
-const DepartmentList: React.FC<Props> = () => {
-  const { department, modules } = useAppSelector<any>((state) => state.apps);
-  const [state, setState] = useState<any>(departmentinitialValue);
-  const [departmentId, setDepartmentId] = useState<any>("");
+export const UserList: React.FC<Props> = () => {
+  const { users, modules, department } = useAppSelector<any>(
+    (state) => state.apps
+  );
+  const [state, setState] = useState<any>(userinitialValue);
   const [modal, modalOpen] = useState<any>(false);
-  const [editModal, setEditModalOpen] = useState<any>(false);
   const [filterOpen, setfilterOpen] = useState<any>(false);
   const dispatch = useDispatch<any>();
-
+  const departmentData = useMemo(
+    () => department.map((i: any) => ({ label: i.name, value: i.id })),
+    [department]
+  );
   useEffect(() => {
     dispatch(
       Apps({
         method: "LIST",
-        module: "teachersList",
-        fields: "teacher",
+        module: "userList",
+        fields: "users",
       })
     );
   }, []);
@@ -47,24 +49,11 @@ const DepartmentList: React.FC<Props> = () => {
       Apps({
         method: "POST",
         data: state,
-        module: "departmentPost",
-        fields: "department",
+        module: "adduserPost",
+        fields: "users",
       })
     );
     modalOpen(false);
-  };
-
-  const handleEditSubmit = () => {
-    dispatch(
-      Apps({
-        method: "PATCH",
-        data: state,
-        module: "departmentPatch",
-        fields: "department",
-        id: departmentId,
-      })
-    );
-    setEditModalOpen(false);
   };
 
   const pageSelection = (pageNumber: any) => {
@@ -131,11 +120,11 @@ const DepartmentList: React.FC<Props> = () => {
           <TableContainer className={"width-full"}>
             <thead>
               <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
+              <th>Id</th>
+                <th>User</th>
                 <th>Email</th>
-                <th>Phone Number</th>
-                <th>
+                <th>Role Name</th>
+                {/* <th>
                   Actions
                   <span
                     onClick={() => setfilterOpen(filterOpen === false)}
@@ -147,35 +136,22 @@ const DepartmentList: React.FC<Props> = () => {
                       cursor: "pointer",
                     }}
                   />
-                </th>
+                </th> */}
               </tr>
             </thead>
             <tbody>
-              {department &&
-                department.length > 0 &&
-                department.map((data: any, key: any) => {
-                  
+              {users &&
+                users.length > 0 &&
+                users.map((data: any, key: any) => {
                   return (
                     <tr key={key}>
-                      <td>{data.first_name}</td>
-                      <td>{data.last_name}</td>
-                      <td>{data.email_address}</td>
-                      <td>{data.phone_number}</td>
-                      <td
-                        width="200px"
-                        onClick={() => {
-                          setEditModalOpen(true);
-                          setState({
-                            first_name: data.first_name,
-                            last_name: data.last_name,
-                            email_address: data.email_address,
-                            phone_number: data.phone_number,
-                          });
-                          setDepartmentId(data.id);
-                        }}
-                      >
+                      <td>{data.id}</td>
+                      <td>{data.username}</td>
+                      <td>{data.email}</td>
+                      <td>{data.role}</td>
+                      {/* <td width="200px">
                         <i className="fa fa-pen" />
-                      </td>
+                      </td> */}
                     </tr>
                   );
                 })}
@@ -184,24 +160,16 @@ const DepartmentList: React.FC<Props> = () => {
         </Container>
       </WorkArea>
       {modal && (
-        <DepartmentModal
+        <UserModal
+          buttonTitle="Add"
           data={state}
+          departmentOptions={departmentData}
           handleChange={handleInputChange}
           handleSubmit={handleSubmit}
-          buttonTitle="Add"
+          moduleOptions={modules}
           setModal={modalOpen}
-        />
-      )}
-      {editModal && (
-        <DepartmentModal
-          data={state}
-          handleChange={handleInputChange}
-          handleSubmit={handleEditSubmit}
-          buttonTitle="Edit"
-          setModal={setEditModalOpen}
         />
       )}
     </WorkArea>
   );
 };
-export default DepartmentList;

@@ -6,14 +6,11 @@ export const AppsService = {
     await admin.post("register_super_admin", data, { headers: requestHeaders() }),
   loginPost: async (data = null) =>
     await admin.post("login/", data, { headers: requestHeaders() }),
-  userPost: async (data = null) =>
-    await admin.post("auth/module_admin", data, { headers: requestHeaders() }),
-  addMember: async (data = null) =>
-    await admin.post("auth/add_team_member", data, {
-      headers: requestHeaders(),
-    }),
-  rolesPost: async (data = null) =>
-    await admin.post("auth/roles", data, { headers: requestHeaders() }),
+  userList: async (data = null) =>
+    await admin.get("login/", data, { headers: requestHeaders() }),
+  
+  adduserPost: async (data = null) =>
+    await admin.post("add_user/", data, { headers: requestHeaders() }),
   teamPost: async (data = null) =>
     await admin.post("auth/team", data, { headers: requestHeaders() }),
   permissionsPost: async (data = null) =>
